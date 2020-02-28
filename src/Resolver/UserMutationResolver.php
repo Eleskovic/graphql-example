@@ -2,10 +2,10 @@
 
 namespace App\Resolver;
 
-use ApiPlatform\Core\GraphQl\Resolver\QueryItemResolverInterface;
+use ApiPlatform\Core\GraphQl\Resolver\MutationResolverInterface;
 use App\Entity\User;
 
-final class BookResolver implements QueryItemResolverInterface
+final class UserMutationResolver implements MutationResolverInterface
 {
     /**
      * @param User|null $item

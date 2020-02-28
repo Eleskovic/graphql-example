@@ -5,8 +5,18 @@ namespace App\Entity;
 use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\ORM\Mapping as ORM;
 
+
 /**
- * @ApiResource()
+ * @ApiResource(graphql={
+ *     "customMutation"={
+ *         "mutation"=App\Resolver\UserMutationResolver::class,
+ *         "args"={
+ *             "username"={"type"="String!"},
+ *             "password"={"type"="String!"},
+ *             "status"={"type"="Int!"}
+ *         }
+ *     }
+ *  })
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
  */
 class User
